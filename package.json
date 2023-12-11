@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "api": "export FLASK_APP=api.py && cd api && .venv/bin/flask run --no-debugger",
+    "api": "cd api && .venv/bin/flask run --no-debugger",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
