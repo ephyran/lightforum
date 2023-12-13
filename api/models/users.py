@@ -1,5 +1,7 @@
 from . import db
 
+from workzeug.security import generate_password_hash, check_password_hash
+
 import sqlalchemy as sqlal
 
 class User(db.Model):
@@ -11,3 +13,9 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User {}>'.format(self.username)
+
+    def set_password(self, password):
+        self.pwd_hash = generate_password_hash(password)
+
+    def get_password(self, password):
+        return check_password_hash(self.pwd_hash, password)

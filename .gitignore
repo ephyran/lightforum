@@ -33,4 +33,3 @@ instance/
 
 # flask-migrate
 api/core.db
-migrations/
