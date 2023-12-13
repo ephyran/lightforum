@@ -30,3 +30,7 @@ __pycache__/
 .venv/
 instance/
 .webassets-cache
+
+# flask-migrate
+api/core.db
+migrations/

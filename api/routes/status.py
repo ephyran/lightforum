@@ -11,7 +11,7 @@ initTime = datetime.datetime.now()
 status = Blueprint('status', __name__, url_prefix='/status')
 
 @status.route('/uptime')
-def get_uptime() -> dict[str, str]:
+def get_uptime():
     """
     Get the number of hours, minutes, and seconds since program launch,
     as well as the actual time thereof.
@@ -26,7 +26,7 @@ def get_uptime() -> dict[str, str]:
     }
 
 @status.route('/is-up/<port>')
-def is_port_in_use(port: str) -> dict[str, str]:
+def is_port_in_use(port):
     """
     Get the current status of the passed port.
 
