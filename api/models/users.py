@@ -1,10 +1,12 @@
 from . import db
 
-from workzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 import sqlalchemy as sqlal
 
 class User(db.Model):
+    __tablename__ = 'users'
+
     id: sqlal.orm.Mapped[int] = sqlal.orm.mapped_column(primary_key=True)
     username: sqlal.orm.Mapped[str] = sqlal.orm.mapped_column(sqlal.String(64), index=True, unique=True)
     email: sqlal.orm.Mapped[str] = sqlal.orm.mapped_column(sqlal.String(254), index=True, unique=True)
